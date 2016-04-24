@@ -10,7 +10,7 @@ public class MainController {
 
     private static final Logger log = LoggerFactory.getLogger(MainController.class);
 
-    @RequestMapping(value = { "/index", "" })
+    @RequestMapping(value = { "/index", "/" })
     public String index() {
         log.info("# 进入首页");
         return "index";
