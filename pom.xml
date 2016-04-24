@@ -13,6 +13,9 @@
 
 		<!-- spring -->
 		<spring.version>4.2.5.RELEASE</spring.version>
+		
+		<!-- sitemesh -->
+		<sitemesh.version>3.0.1</sitemesh.version>
 
 		<!-- log -->
 		<slf4j.version>1.7.21</slf4j.version>
@@ -141,7 +144,13 @@
 			<artifactId>spring-expression</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
+		
+		<!-- sitemesh -->
+		<dependency>
+			<groupId>org.sitemesh</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>${sitemesh.version}</version>
+		</dependency>
 
 		<!-- log4j2 and slf4j -->
 		<dependency>
