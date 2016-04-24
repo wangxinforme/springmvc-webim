@@ -64,19 +64,54 @@
 </head>
 
 <body>
-
 	<br />
 	<br />
 	<br />
 	<br />
 	<br />
 	<br />
+	<div class="navbar-wrapper">
+		<div class="container">
+			<form class="form-horizontal" name="userForm">
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">账号</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="userName" name="userName" value="wangxin" placeholder="请输入账号" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="password" name="password" value="123456" placeholder="请输入密码" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<div class="checkbox">
+							<label> <input type="checkbox" name="register"> 注册
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputPassword3" class="col-sm-2 control-label">发送至</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="to" name="to" value="vincent" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="button" class="btn btn-default" id="login">登录</button>
+					</div>
+				</div>
+		</div>
+	</div>
 
 	<!-- 登陆表单 -->
-	<form name="userForm" style="background-color: #fcfcfc; width: 100%;">
-		userName：<input type="text" name="userName" value="wangxin" /> password：<input type="password" name="password" value="123456" /> register: <input type="checkbox" name="register" /> sendTo： <input type="text" id="to" name="to" value="vincent"
-			width="10" /> <input type="button" value="Login" id="login" />
-	</form>
+	<!-- 		<form name="userForm" style="background-color: #fcfcfc; width: 100%;"> -->
+	<!-- 			userName：<input type="text" name="userName" value="wangxin" /> password：<input type="password" name="password" value="123456" /> register: <input type="checkbox" name="register" /> sendTo： <input type="text" id="to" name="to" value="vincent" -->
+	<!-- 				width="10" /> <input type="button" value="Login" id="login" /> -->
+	<!-- 		</form> -->
 	<!-- 新窗口聊天 -->
 	<div id="newConn" style="display: none; background-color: #fcfcfc; width: 100%;">
 		User：<label></label> sendTo： <input type="text" id="sendTo" value="vincent" width="10" /> <input type="button" value="new Chat" id="newSession" /> <input type="button" value="Logout" id="logout" />

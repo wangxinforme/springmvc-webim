@@ -41,6 +41,9 @@
 		<logger name="net.spy.memcached" level="debug" />
 		<logger name="org.springframework" level="debug" />
 		<logger name="org.apache" level="debug" />
+		<logger name="org.jabber" level="debug" />
+		<logger name="java_cup.runtime" level="debug" />
+		<logger name="org.w3c" level="debug" />
 
 		<!-- mybatis sql log -->
 		<logger name="org.apache.ibatis.jdbc.ScriptRunner" level="debug" />
