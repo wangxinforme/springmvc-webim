@@ -13,7 +13,7 @@
 
 		<!-- spring -->
 		<spring.version>4.2.5.RELEASE</spring.version>
-		
+
 		<!-- sitemesh -->
 		<sitemesh.version>3.0.1</sitemesh.version>
 
@@ -53,30 +53,6 @@
 	</properties>
 
 	<dependencies>
-	
-		<dependency>
-			<groupId>jhb</groupId>
-			<artifactId>jhb</artifactId>
-			<version>1.0</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/lib/jhb-1.0.jar</systemPath>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.apache</groupId>
-			<artifactId>xml.serializer</artifactId>
-			<version>1.0</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/lib/serializer.jar</systemPath>
-		</dependency>
-		
-		<dependency>
-			<groupId>xalan</groupId>
-			<artifactId>xalan</artifactId>
-			<version>1.0</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/lib/xalan.jar</systemPath>
-		</dependency>
 
 		<!-- spring -->
 		<dependency>
@@ -144,12 +120,31 @@
 			<artifactId>spring-expression</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- sitemesh -->
 		<dependency>
 			<groupId>org.sitemesh</groupId>
 			<artifactId>sitemesh</artifactId>
 			<version>${sitemesh.version}</version>
+		</dependency>
+		
+		<!-- im -->
+		<dependency>
+			<groupId>jhb</groupId>
+			<artifactId>jhb</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>serializer</artifactId>
+			<version>2.7.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>xalan</artifactId>
+			<version>2.7.2</version>
 		</dependency>
 
 		<!-- log4j2 and slf4j -->
