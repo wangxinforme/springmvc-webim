@@ -2,9 +2,6 @@
  * jquery local chat
  * @version v2.0 
  * @createDate -- 2012-5-28
- * @author hoojo
- * @email hoojo_@126.com
- * @blog http://hoojo.cnblogs.com & http://blog.csdn.net/IBM_hoojo
  * @requires jQuery v1.2.3 or later, send.message.editor-1.0.js
  * Copyright (c) 2012 M. hoo
  **/

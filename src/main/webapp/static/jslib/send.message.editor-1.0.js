@@ -1,8 +1,6 @@
 /**
  * IM chat Send Message iframe editor
  * @author: hoojo
- * @email: hoojo_@126.com
- * @blog: http://blog.csdn.net/IBM_hoojo 
  * @createDate: 2012-5-24
  * @version 1.0
  **/

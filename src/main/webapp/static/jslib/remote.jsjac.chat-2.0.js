@@ -1,8 +1,6 @@
 /**
  * IM chat jsjac remote message
  * @author: hoojo
- * @email: hoojo_@126.com
- * @blog http://hoojo.cnblogs.com & http://blog.csdn.net/IBM_hoojo
  * @createDate: 2012-5-24
  * @version 2.0
  * @requires jQuery v1.2.3 or later
