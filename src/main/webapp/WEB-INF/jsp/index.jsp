@@ -34,16 +34,16 @@
       });
       // 登陆到openfire服务器
       remote.jsjac.chat.login(document.userForm);
-      $("label").text(userName);
-      $("form").hide();
-      $("#newConn").show();
+      $("#currentUserName").text(userName);
+      $("#userForm").addClass("hide");
+      $("#newConn").removeClass("hide");
     });
 
     $("#logout").click(function() {
       // 退出openfire登陆，断开链接
       remote.jsjac.chat.logout();
-      $("form").show();
-      $("#newConn").hide();
+      $("#userForm").removeClass("hide");
+      $("#newConn").addClass("hide");
       $("#chat").hide(800);
     });
 
@@ -63,7 +63,7 @@
 	<div class="row">
 		<div class="navbar-wrapper">
 			<div class="container">
-				<form class="form-horizontal" name="userForm">
+				<form class="form-horizontal" name="userForm" id="userForm">
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">账号</label>
 						<div class="col-sm-3">
@@ -96,21 +96,41 @@
 						</div>
 					</div>
 				</form>
-				
-				
-				
-				
+
+				<form class="form-horizontal hide" id="newConn">
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-2 control-label">账号</label>
+						<div class="col-sm-3">
+							<label id="currentUserName"></label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">发送至</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="sendTo" value="vincent" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-3">
+							<button type="button" class="btn btn-default" id="newSession">新聊天窗口</button>
+							<button type="button" class="btn btn-default" id="logout">登出</button>
+						</div>
+					</div>
+				</form>
+
+
 			</div>
 		</div>
 	</div>
 
 	<!-- 新窗口聊天 -->
-	<div id="newConn" style="display: none; background-color: #fcfcfc; width: 100%;">
-		User：<label></label> sendTo： <input type="text" id="sendTo" value="vincent" width="10" /> <input type="button" value="new Chat" id="newSession" /> <input type="button" value="Logout" id="logout" />
-	</div>
+	<!-- 	<div id="newConn" style="display: none; background-color: #fcfcfc; width: 100%;"> -->
+	<!-- 		User：<label></label> sendTo： <input type="text" id="sendTo" value="vincent" width="10" /> -->
+	<!-- 		 <input type="button" value="new Chat" id="newSession" /> <input type="button" value="Logout" id="logout" /> -->
+	<!-- 	</div> -->
 	<!-- 日志信息 -->
-	<div id="error" style="display:; background-color: red;"></div>
-	<div id="info" style="display:; background-color: #999999;"></div>
+	<p id="error" style="display:; background-color: red;"></p>
+	<p id="info" style="display:; background-color: #999999;"></p>
 	<!-- 聊天来消息提示 -->
 	<div class="chat-message">
 		<img src="${ctx }/static/images/write_icon.png" class="no-msg" /> <img src="${ctx }/static/images/write_icon.gif" class="have-msg" style="display: none;" />
