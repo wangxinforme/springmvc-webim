@@ -188,7 +188,7 @@
             }
         }, 
         
-        faceImagePath: "images/emotions/",
+        faceImagePath: "static/images/emotions/",
         faceElTpl: function (i) {
             return [
                 "<img src='",

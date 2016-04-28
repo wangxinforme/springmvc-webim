@@ -1,7 +1,10 @@
-/** ҳ�沼�� **/
 body {
 	padding-top: 70px;
 	padding-bottom: 30px;
+}
+
+#wrap {
+    padding-top: 60px;
 }
 
 .theme-dropdown .dropdown-menu {
@@ -14,9 +17,6 @@ body {
 	margin: 5px 0;
 }
 
-/** ҳ�沼��  the end **/
-
-/** ��ҳ **/
 .pagingFrom>li>a,.pagingFrom>li>span {
 	color: #000000;
 }
@@ -50,7 +50,6 @@ body {
 	margin: 0 3px;
 }
 
-/** ��ҳ  the end **/
 
 /** ------- CSS------------------- **/
 .col-sm-0 {
