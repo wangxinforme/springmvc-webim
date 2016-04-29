@@ -18,7 +18,7 @@
 		</Console>
 
 		<!-- 应用日志 -->
-		<RollingRandomAccessFile name="RollingLog" fileName="${BACKUP_HOME}/RollingLog.log" filePattern="${BACKUP_HOME}/RollingLog.%d{yyyy-MM-dd-HH}.log">
+		<RollingRandomAccessFile name="RollingLog" fileName="${BACKUP_HOME}/Rolling.log" filePattern="${BACKUP_HOME}/Rolling.%d{yyyy-MM-dd-HH}.log">
 			<PatternLayout pattern="[${PROJECT_NAME}]%date{yy/MM/dd HH:mm:ss.SSS} %-5level [%thread] %logger{15}(%line) - %msg%n" />
 			<Policies>
 				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
@@ -26,7 +26,7 @@
 		</RollingRandomAccessFile>
 
 		<!-- 单独业务日志 -->
-		<RollingRandomAccessFile name="BusinessLog" fileName="${BACKUP_HOME}/BusinessLog.log" filePattern="${BACKUP_HOME}/BusinessLog.%d{yyyy-MM-dd-HH}.log">
+		<RollingRandomAccessFile name="BusinessLog" fileName="${BACKUP_HOME}/Business.log" filePattern="${BACKUP_HOME}/Business.%d{yyyy-MM-dd-HH}.log">
 			<PatternLayout pattern="[${PROJECT_NAME}]%date{yy/MM/dd HH:mm:ss.SSS} %-5level [%thread] %logger{15}(%line) - %msg%n" />
 			<Policies>
 				<TimeBasedTriggeringPolicy interval="1" modulate="true" />

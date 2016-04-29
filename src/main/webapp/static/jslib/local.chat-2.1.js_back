@@ -92,9 +92,7 @@
         receiveMessageTpl: function (userName, styleTpl, content, flag) {
             var userCls = flag ? "me" : "you";
             if (styleTpl && flag) {
-                // 注释掉的原因是，每一次都会显示span标签，显示不友好
-                //content = [ "<span style='", styleTpl, "'>", content, "</span>" ].join("");
-                content = [ "", content, "" ].join("");
+                content = [ "<span style='", styleTpl, "'>", content, "</span>" ].join("");
             }
             return [
                 '<p class="', userCls, '">', _opts.getDatetime(), '  ', userName, ':</p>',
@@ -178,8 +176,7 @@
                     }
                 } else { // 非手机端通信 可以发送html代码
                     var styleTpl = _opts.sendMessageStyle.getStyleTpl();
-                    //content = [ "<span style='", styleTpl, "'>", content, "</span>" ].join("");
-                    content = [ "", content, "" ].join("");
+                    content = [ "<span style='", styleTpl, "'>", content, "</span>" ].join("");
                     remote.jsjac.chat.sendMessage(content, receiver);
                 }
                 
@@ -505,8 +502,7 @@
                     $(".no-msg").hide();
                 }
                 
-                // 网页的title不显示消息提示
-                //_opts.messageTip("闪聊有了新消息，请查收！");
+                _opts.messageTip("闪聊有了新消息，请查收！");
                 // 向chat接收信息区域写消息
                 remote.jsjac.chat.writeMessage(userJID, userName, content);
             } 

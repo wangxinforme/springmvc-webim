@@ -63,7 +63,7 @@
 	<div class="row">
 		<div class="navbar-wrapper">
 			<div class="container">
-				<form class="form-horizontal" name="userForm" id="userForm">
+				<form class="form-horizontal" name="userForm" id="userForm" style="">
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">账号</label>
 						<div class="col-sm-3">
@@ -97,7 +97,7 @@
 					</div>
 				</form>
 
-				<form class="form-horizontal hide" id="newConn">
+				<form class="form-horizontal hide" id="newConn" style="">
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">账号</label>
 						<div class="col-sm-3">
