@@ -87,7 +87,7 @@
 					<div class="form-group">
 						<label for="inputPassword3" class="col-sm-2 control-label">发送至</label>
 						<div class="col-sm-3">
-							<input type="password" class="form-control" id="to" name="to" value="vincent" />
+							<input type="text" class="form-control" id="to" name="to" value="vincent" />
 						</div>
 					</div>
 					<div class="form-group">
