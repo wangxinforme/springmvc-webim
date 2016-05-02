@@ -1,6 +1,11 @@
 package cn.springmvc.model;
 
-public class Archiveconversations {
+import cn.springmvc.common.base.model.BaseModel;
+
+public class Archiveconversations extends BaseModel {
+
+    private static final long serialVersionUID = -5246640962746730468L;
+
     private Long conversationid;
 
     private Long starttime;

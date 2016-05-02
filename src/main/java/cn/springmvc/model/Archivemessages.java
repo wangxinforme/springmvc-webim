@@ -1,6 +1,11 @@
 package cn.springmvc.model;
 
-public class Archivemessages {
+import cn.springmvc.common.base.model.BaseModel;
+
+public class Archivemessages extends BaseModel {
+
+    private static final long serialVersionUID = 577999890554017584L;
+
     private Long messageid;
 
     private Long time;
@@ -14,6 +19,10 @@ public class Archivemessages {
     private Long conversationid;
 
     private String body;
+
+    private String ownerJid;
+
+    private String withJid;
 
     public Long getMessageid() {
         return messageid;
@@ -70,4 +79,21 @@ public class Archivemessages {
     public void setBody(String body) {
         this.body = body;
     }
+
+    public String getOwnerJid() {
+        return ownerJid;
+    }
+
+    public void setOwnerJid(String ownerJid) {
+        this.ownerJid = ownerJid;
+    }
+
+    public String getWithJid() {
+        return withJid;
+    }
+
+    public void setWithJid(String withJid) {
+        this.withJid = withJid;
+    }
+
 }

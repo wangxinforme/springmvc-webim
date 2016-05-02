@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.springmvc.mapper.ArchivemessagesMapper">
+
 	<resultMap id="BaseResultMap" type="cn.springmvc.model.Archivemessages">
 		<id column="messageId" property="messageid" jdbcType="BIGINT" />
 		<result column="time" property="time" jdbcType="BIGINT" />
@@ -9,16 +10,20 @@
 		<result column="subject" property="subject" jdbcType="VARCHAR" />
 		<result column="conversationId" property="conversationid" jdbcType="BIGINT" />
 	</resultMap>
+
 	<resultMap id="ResultMapWithBLOBs" type="cn.springmvc.model.Archivemessages" extends="BaseResultMap">
 		<result column="body" property="body" jdbcType="LONGVARCHAR" />
 	</resultMap>
+
 	<sql id="Base_Column_List">
 		messageId, time, direction, type, subject, conversationId
 	</sql>
+
 	<sql id="Blob_Column_List">
 		body
 	</sql>
-	<select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long">
+
+	<select id="findById" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long">
 		select
 		<include refid="Base_Column_List" />
 		,
@@ -26,108 +31,20 @@
 		from archivemessages
 		where messageId = #{messageid,jdbcType=BIGINT}
 	</select>
-	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+
+	<select id="findById" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		,
+		<include refid="Blob_Column_List" />
+		from archivemessages
+		where messageId = #{messageid,jdbcType=BIGINT}
+	</select>
+
+	<delete id="delete" parameterType="java.lang.Long">
 		delete from archivemessages
 		where messageId = #{messageid,jdbcType=BIGINT}
 	</delete>
-	<insert id="insert" parameterType="cn.springmvc.model.Archivemessages">
-		insert into archivemessages (messageId, time, direction,
-		type, subject, conversationId,
-		body)
-		values (#{messageid,jdbcType=BIGINT}, #{time,jdbcType=BIGINT}, #{direction,jdbcType=CHAR},
-		#{type,jdbcType=CHAR}, #{subject,jdbcType=VARCHAR}, #{conversationid,jdbcType=BIGINT},
-		#{body,jdbcType=LONGVARCHAR})
-	</insert>
-	<insert id="insertSelective" parameterType="cn.springmvc.model.Archivemessages">
-		insert into archivemessages
-		<trim prefix="(" suffix=")" suffixOverrides=",">
-			<if test="messageid != null">
-				messageId,
-			</if>
-			<if test="time != null">
-				time,
-			</if>
-			<if test="direction != null">
-				direction,
-			</if>
-			<if test="type != null">
-				type,
-			</if>
-			<if test="subject != null">
-				subject,
-			</if>
-			<if test="conversationid != null">
-				conversationId,
-			</if>
-			<if test="body != null">
-				body,
-			</if>
-		</trim>
-		<trim prefix="values (" suffix=")" suffixOverrides=",">
-			<if test="messageid != null">
-				#{messageid,jdbcType=BIGINT},
-			</if>
-			<if test="time != null">
-				#{time,jdbcType=BIGINT},
-			</if>
-			<if test="direction != null">
-				#{direction,jdbcType=CHAR},
-			</if>
-			<if test="type != null">
-				#{type,jdbcType=CHAR},
-			</if>
-			<if test="subject != null">
-				#{subject,jdbcType=VARCHAR},
-			</if>
-			<if test="conversationid != null">
-				#{conversationid,jdbcType=BIGINT},
-			</if>
-			<if test="body != null">
-				#{body,jdbcType=LONGVARCHAR},
-			</if>
-		</trim>
-	</insert>
-	<update id="updateByPrimaryKeySelective" parameterType="cn.springmvc.model.Archivemessages">
-		update archivemessages
-		<set>
-			<if test="time != null">
-				time = #{time,jdbcType=BIGINT},
-			</if>
-			<if test="direction != null">
-				direction = #{direction,jdbcType=CHAR},
-			</if>
-			<if test="type != null">
-				type = #{type,jdbcType=CHAR},
-			</if>
-			<if test="subject != null">
-				subject = #{subject,jdbcType=VARCHAR},
-			</if>
-			<if test="conversationid != null">
-				conversationId = #{conversationid,jdbcType=BIGINT},
-			</if>
-			<if test="body != null">
-				body = #{body,jdbcType=LONGVARCHAR},
-			</if>
-		</set>
-		where messageId = #{messageid,jdbcType=BIGINT}
-	</update>
-	<update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.springmvc.model.Archivemessages">
-		update archivemessages
-		set time = #{time,jdbcType=BIGINT},
-		direction = #{direction,jdbcType=CHAR},
-		type = #{type,jdbcType=CHAR},
-		subject = #{subject,jdbcType=VARCHAR},
-		conversationId = #{conversationid,jdbcType=BIGINT},
-		body = #{body,jdbcType=LONGVARCHAR}
-		where messageId = #{messageid,jdbcType=BIGINT}
-	</update>
-	<update id="updateByPrimaryKey" parameterType="cn.springmvc.model.Archivemessages">
-		update archivemessages
-		set time = #{time,jdbcType=BIGINT},
-		direction = #{direction,jdbcType=CHAR},
-		type = #{type,jdbcType=CHAR},
-		subject = #{subject,jdbcType=VARCHAR},
-		conversationId = #{conversationid,jdbcType=BIGINT}
-		where messageId = #{messageid,jdbcType=BIGINT}
-	</update>
+
+
 </mapper>

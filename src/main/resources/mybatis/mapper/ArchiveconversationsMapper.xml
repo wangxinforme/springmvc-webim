@@ -1,142 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.springmvc.mapper.ArchiveconversationsMapper" >
-  <resultMap id="BaseResultMap" type="cn.springmvc.model.Archiveconversations" >
-    <id column="conversationId" property="conversationid" jdbcType="BIGINT" />
-    <result column="startTime" property="starttime" jdbcType="BIGINT" />
-    <result column="endTime" property="endtime" jdbcType="BIGINT" />
-    <result column="ownerJid" property="ownerjid" jdbcType="VARCHAR" />
-    <result column="ownerResource" property="ownerresource" jdbcType="VARCHAR" />
-    <result column="withJid" property="withjid" jdbcType="VARCHAR" />
-    <result column="withResource" property="withresource" jdbcType="VARCHAR" />
-    <result column="subject" property="subject" jdbcType="VARCHAR" />
-    <result column="thread" property="thread" jdbcType="VARCHAR" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    conversationId, startTime, endTime, ownerJid, ownerResource, withJid, withResource, 
-    subject, thread
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
-    <include refid="Base_Column_List" />
-    from archiveconversations
-    where conversationId = #{conversationid,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from archiveconversations
-    where conversationId = #{conversationid,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" parameterType="cn.springmvc.model.Archiveconversations" >
-    insert into archiveconversations (conversationId, startTime, endTime, 
-      ownerJid, ownerResource, withJid, 
-      withResource, subject, thread
-      )
-    values (#{conversationid,jdbcType=BIGINT}, #{starttime,jdbcType=BIGINT}, #{endtime,jdbcType=BIGINT}, 
-      #{ownerjid,jdbcType=VARCHAR}, #{ownerresource,jdbcType=VARCHAR}, #{withjid,jdbcType=VARCHAR}, 
-      #{withresource,jdbcType=VARCHAR}, #{subject,jdbcType=VARCHAR}, #{thread,jdbcType=VARCHAR}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="cn.springmvc.model.Archiveconversations" >
-    insert into archiveconversations
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="conversationid != null" >
-        conversationId,
-      </if>
-      <if test="starttime != null" >
-        startTime,
-      </if>
-      <if test="endtime != null" >
-        endTime,
-      </if>
-      <if test="ownerjid != null" >
-        ownerJid,
-      </if>
-      <if test="ownerresource != null" >
-        ownerResource,
-      </if>
-      <if test="withjid != null" >
-        withJid,
-      </if>
-      <if test="withresource != null" >
-        withResource,
-      </if>
-      <if test="subject != null" >
-        subject,
-      </if>
-      <if test="thread != null" >
-        thread,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="conversationid != null" >
-        #{conversationid,jdbcType=BIGINT},
-      </if>
-      <if test="starttime != null" >
-        #{starttime,jdbcType=BIGINT},
-      </if>
-      <if test="endtime != null" >
-        #{endtime,jdbcType=BIGINT},
-      </if>
-      <if test="ownerjid != null" >
-        #{ownerjid,jdbcType=VARCHAR},
-      </if>
-      <if test="ownerresource != null" >
-        #{ownerresource,jdbcType=VARCHAR},
-      </if>
-      <if test="withjid != null" >
-        #{withjid,jdbcType=VARCHAR},
-      </if>
-      <if test="withresource != null" >
-        #{withresource,jdbcType=VARCHAR},
-      </if>
-      <if test="subject != null" >
-        #{subject,jdbcType=VARCHAR},
-      </if>
-      <if test="thread != null" >
-        #{thread,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.springmvc.model.Archiveconversations" >
-    update archiveconversations
-    <set >
-      <if test="starttime != null" >
-        startTime = #{starttime,jdbcType=BIGINT},
-      </if>
-      <if test="endtime != null" >
-        endTime = #{endtime,jdbcType=BIGINT},
-      </if>
-      <if test="ownerjid != null" >
-        ownerJid = #{ownerjid,jdbcType=VARCHAR},
-      </if>
-      <if test="ownerresource != null" >
-        ownerResource = #{ownerresource,jdbcType=VARCHAR},
-      </if>
-      <if test="withjid != null" >
-        withJid = #{withjid,jdbcType=VARCHAR},
-      </if>
-      <if test="withresource != null" >
-        withResource = #{withresource,jdbcType=VARCHAR},
-      </if>
-      <if test="subject != null" >
-        subject = #{subject,jdbcType=VARCHAR},
-      </if>
-      <if test="thread != null" >
-        thread = #{thread,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where conversationId = #{conversationid,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.springmvc.model.Archiveconversations" >
-    update archiveconversations
-    set startTime = #{starttime,jdbcType=BIGINT},
-      endTime = #{endtime,jdbcType=BIGINT},
-      ownerJid = #{ownerjid,jdbcType=VARCHAR},
-      ownerResource = #{ownerresource,jdbcType=VARCHAR},
-      withJid = #{withjid,jdbcType=VARCHAR},
-      withResource = #{withresource,jdbcType=VARCHAR},
-      subject = #{subject,jdbcType=VARCHAR},
-      thread = #{thread,jdbcType=VARCHAR}
-    where conversationId = #{conversationid,jdbcType=BIGINT}
-  </update>
+<mapper namespace="cn.springmvc.mapper.ArchiveconversationsMapper">
+
+	<resultMap id="BaseResultMap" type="cn.springmvc.model.Archiveconversations">
+		<id column="conversationId" property="conversationid" jdbcType="BIGINT" />
+		<result column="startTime" property="starttime" jdbcType="BIGINT" />
+		<result column="endTime" property="endtime" jdbcType="BIGINT" />
+		<result column="ownerJid" property="ownerjid" jdbcType="VARCHAR" />
+		<result column="ownerResource" property="ownerresource" jdbcType="VARCHAR" />
+		<result column="withJid" property="withjid" jdbcType="VARCHAR" />
+		<result column="withResource" property="withresource" jdbcType="VARCHAR" />
+		<result column="subject" property="subject" jdbcType="VARCHAR" />
+		<result column="thread" property="thread" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		conversationId, startTime, endTime, ownerJid, ownerResource, withJid, withResource,
+		subject, thread
+	</sql>
+
+	<select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from archiveconversations
+		where conversationId = #{conversationid,jdbcType=BIGINT}
+	</select>
+
+	<delete id="delete" parameterType="java.lang.Long">
+		delete from archiveconversations
+		where conversationId = #{conversationid,jdbcType=BIGINT}
+	</delete>
+
+
 </mapper>
