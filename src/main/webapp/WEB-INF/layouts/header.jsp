@@ -15,7 +15,8 @@
 
 				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">IM <b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li id="${c.id }"><a href="${ctx }/index">IM示例</a></li>
+						<li id="${c.id }"><a href="${ctx }/index">IM聊天</a></li>
+						<li id="${c.id }"><a href="${ctx }/message">查看聊天记录</a></li>
 					</ul></li>
 			</ul>
 

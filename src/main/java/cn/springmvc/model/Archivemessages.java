@@ -80,19 +80,19 @@ public class Archivemessages extends BaseModel {
         this.body = body;
     }
 
-    public String getOwnerJid() {
+    public String getOwnerjid() {
         return ownerJid;
     }
 
-    public void setOwnerJid(String ownerJid) {
+    public void setOwnerjid(String ownerJid) {
         this.ownerJid = ownerJid;
     }
 
-    public String getWithJid() {
+    public String getWithjid() {
         return withJid;
     }
 
-    public void setWithJid(String withJid) {
+    public void setWithjid(String withJid) {
         this.withJid = withJid;
     }
 

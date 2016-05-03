@@ -8,42 +8,42 @@
 		<result column="direction" property="direction" jdbcType="CHAR" />
 		<result column="type" property="type" jdbcType="CHAR" />
 		<result column="subject" property="subject" jdbcType="VARCHAR" />
+		<result column="body" property="body" jdbcType="LONGVARCHAR" />
 		<result column="conversationId" property="conversationid" jdbcType="BIGINT" />
 	</resultMap>
-
-	<resultMap id="ResultMapWithBLOBs" type="cn.springmvc.model.Archivemessages" extends="BaseResultMap">
+	
+	<resultMap id="ResultMap" type="cn.springmvc.model.Archivemessages">
+		<id column="messageId" property="messageid" jdbcType="BIGINT" />
+		<result column="time" property="time" jdbcType="BIGINT" />
+		<result column="direction" property="direction" jdbcType="CHAR" />
+		<result column="type" property="type" jdbcType="CHAR" />
+		<result column="subject" property="subject" jdbcType="VARCHAR" />
 		<result column="body" property="body" jdbcType="LONGVARCHAR" />
+		<result column="conversationId" property="conversationid" jdbcType="BIGINT" />
+		
+		<result column="ownerJid" property="ownerjid" />
+		<result column="withJid" property="withjid" />
 	</resultMap>
 
 	<sql id="Base_Column_List">
-		messageId, time, direction, type, subject, conversationId
+		messageId, time, direction, type, subject,body, conversationId
 	</sql>
 
-	<sql id="Blob_Column_List">
-		body
-	</sql>
-
-	<select id="findById" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long">
+	<select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Long">
 		select
 		<include refid="Base_Column_List" />
-		,
-		<include refid="Blob_Column_List" />
 		from archivemessages
 		where messageId = #{messageid,jdbcType=BIGINT}
 	</select>
-
-	<select id="findById" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long">
-		select
-		<include refid="Base_Column_List" />
-		,
-		<include refid="Blob_Column_List" />
-		from archivemessages
-		where messageId = #{messageid,jdbcType=BIGINT}
+	
+	<select id="findAll" resultMap="ResultMap">
+		select t1.ownerJid,t1.withJid, t2.messageId, t2.time, t2.direction, t2.type, t2.subject,t2.body, t2.conversationId 
+		from archiveconversations t1 , archivemessages t2
+		where t1.conversationId=t2.conversationId
 	</select>
 
 	<delete id="delete" parameterType="java.lang.Long">
-		delete from archivemessages
-		where messageId = #{messageid,jdbcType=BIGINT}
+		delete from archivemessages	where messageId = #{messageid,jdbcType=BIGINT}
 	</delete>
 
 

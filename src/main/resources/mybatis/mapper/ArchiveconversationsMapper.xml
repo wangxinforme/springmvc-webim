@@ -27,8 +27,7 @@
 	</select>
 
 	<delete id="delete" parameterType="java.lang.Long">
-		delete from archiveconversations
-		where conversationId = #{conversationid,jdbcType=BIGINT}
+		delete from archiveconversations where conversationId = #{conversationid,jdbcType=BIGINT}
 	</delete>
 
 

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>springmvc-<sitemesh:write property='title' /></title>
+<title>WEBIM-<sitemesh:write property='title' /></title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <c:set var="version_css" value="20131213" scope="application"></c:set>
