@@ -8,7 +8,7 @@
 	<packaging>war</packaging>
 
 	<properties>
-		<project.build.jdkVersion>1.7</project.build.jdkVersion>
+		<project.build.jdkVersion>1.6</project.build.jdkVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- spring -->
@@ -24,7 +24,7 @@
 
 		<!-- log -->
 		<slf4j.version>1.7.21</slf4j.version>
-		<log4j.version>2.5</log4j.version>
+		<log4j.version>2.3</log4j.version>
 
 		<!-- apache -->
 		<httpcomponents.version>4.4</httpcomponents.version>
