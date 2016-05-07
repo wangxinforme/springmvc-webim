@@ -173,7 +173,7 @@ remote.jsjac.chat = {
     setupEvent: function (con) {
         var remoteChat = remote.jsjac.chat;
         con.registerHandler('message', remoteChat.handleMessage);
-        //con.registerHandler('presence', remoteChat.handlePresence);
+        con.registerHandler('presence', remoteChat.handlePresence);
         con.registerHandler('iq', remoteChat.handleIQ);
         con.registerHandler('onconnect', remoteChat.handleConnected);
         con.registerHandler('onerror', remoteChat.handleError);
